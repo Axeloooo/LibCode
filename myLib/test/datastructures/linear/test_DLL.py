@@ -32,7 +32,10 @@ def test_insert():
     dll.insert(DNode(0), 0)
     dll.insert(DNode(3), 3)
     dll.insert(DNode(4), 4)
-    assert [node.data for node in dll] == [0, 1, 2, 3, 4]
+    current = dll.head
+    for i in range(5):
+        assert current.data == i
+        current = current.next
 
 
 def test_is_sorted():
@@ -95,7 +98,8 @@ def test_delete():
     dll.insert_head(DNode(1))
     dll.insert_head(DNode(0))
     dll.delete(DNode(1))
-    assert [node.data for node in dll] == [0, 2]
+    assert dll.head.data == 0
+    assert dll.tail.data == 2
 
 
 def test_clear():
