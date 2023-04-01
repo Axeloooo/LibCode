@@ -48,6 +48,8 @@ class SLL():
             self.size += 1
 
     def is_sorted(self):
+        if self.head == None:
+            return True
         current = self.head
         while current.next:
             if current.data > current.next.data:
