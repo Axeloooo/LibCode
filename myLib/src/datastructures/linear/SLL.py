@@ -4,10 +4,10 @@ from myLib.src.datastructures.nodes.SNode import SNode
 
 
 class SLL():
-    def __init__(self, head=None):
-        self.head = head
-        self.tail = head
-        self.size = 0 if head is None else 1
+    def __init__(self, node=None):
+        self.head = node
+        self.tail = node
+        self.size = 0 if node is None else 1
 
     def insert_head(self, node):
         if self.head is None:

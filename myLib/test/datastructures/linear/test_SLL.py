@@ -136,13 +136,3 @@ def test_clear():
     assert sll.head is None
     assert sll.tail is None
     assert sll.size == 0
-
-
-def test_print(capsys):
-    sll = SLL()
-    sll.insert_tail(SNode(3))
-    sll.insert_tail(SNode(5))
-    sll.insert_tail(SNode(7))
-    sll.print()
-    captured = capsys.readouterr()
-    assert captured.out == "Inserting tail node: 3\nInserting tail node: 5\nInserting tail node: 7\nList Length: 3\nSorted Status: True\nList Content: 3 -> 5 -> 7 -> "

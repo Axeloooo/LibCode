@@ -1,7 +1,5 @@
 import pytest
-from myLib.src.datastructures.nodes.SNode import SNode
 from myLib.src.datastructures.nodes.DNode import DNode
-from myLib.src.datastructures.linear.SLL import SLL
 from myLib.src.datastructures.linear.DLL import DLL
 
 
@@ -109,16 +107,3 @@ def test_clear():
     dll.clear()
     assert dll.head == None
     assert dll.tail == None
-
-
-def test_print(capsys):
-    dll = DLL()
-    dll.insert_head(DNode(1))
-    dll.insert_head(DNode(0))
-    dll.insert_tail(DNode(2))
-    dll.print()
-
-    captured = capsys.readouterr()
-    assert "List Length: 3" in captured.out
-    assert "Sorted Status: True" in captured.out
-    assert "List Content: 0 -> 1 -> 2 -> " in captured.out

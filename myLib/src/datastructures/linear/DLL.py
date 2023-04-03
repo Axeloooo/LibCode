@@ -5,10 +5,10 @@ from myLib.src.datastructures.linear.SLL import SLL
 
 
 class DLL(SLL):
-    def __init__(self, head=None):
-        super().__init__(head)
-        if head:
-            head.prev = None
+    def __init__(self, node=None):
+        super().__init__(node)
+        if node:
+            node.prev = None
             self.tail.prev = None
 
     def insert_head(self, node):
