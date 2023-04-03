@@ -11,7 +11,6 @@ class CSLL(SLL):
             node.next = node
 
     def insert_head(self, node):
-        assert isinstance(node, SNode), "Node must be an instance of SNode"
         if self.head is None:
             node.next = node
             self.head = node
@@ -23,7 +22,6 @@ class CSLL(SLL):
         self.size += 1
 
     def insert_tail(self, node):
-        assert isinstance(node, SNode), "Node must be an instance of SNode"
         if self.tail is None:
             node.next = node
             self.head = node
@@ -33,22 +31,6 @@ class CSLL(SLL):
             self.tail.next = node
             self.tail = node
         self.size += 1
-
-    def insert(self, node, position):
-        assert isinstance(node, SNode), "Node must be an instance of SNode"
-        if position < 0 or position > self.size:
-            raise IndexError("Invalid position")
-        if position == 0:
-            self.insert_head(node)
-        elif position == self.size:
-            self.insert_tail(node)
-        else:
-            current = self.head
-            for _ in range(position - 1):
-                current = current.next
-            node.next = current.next
-            current.next = node
-            self.size += 1
 
     def is_sorted(self):
         if self.head is None or self.size == 1:
@@ -71,10 +53,8 @@ class CSLL(SLL):
             self.tail = sorted_list.tail
 
     def sorted_insert(self, node):
-        assert isinstance(node, SNode), "Node must be instance of SNode"
         if not self.is_sorted():
             self.sort()
-
         if self.head is None or node.data <= self.head.data:
             self.insert_head(node)
         elif node.data >= self.tail.data:
@@ -88,6 +68,14 @@ class CSLL(SLL):
             node.next = current.next
             current.next = node
             self.size += 1
+
+    def search(self, node):
+        current = self.head
+        for _ in range(self.size):
+            if current == node:
+                return current
+            current = current.next
+        return None
 
     def delete_head(self):
         if self.head:
@@ -111,6 +99,22 @@ class CSLL(SLL):
                 current.next = self.head
                 self.tail = current
             self.size -= 1
+
+    def delete(self, node):
+        if self.head is None:
+            return
+        if self.head == node:
+            self.delete_head()
+        elif self.tail == node:
+            self.delete_tail()
+        else:
+            current = self.head
+            for _ in range(self.size - 1):
+                if current.next == node:
+                    current.next = current.next.next
+                    self.size -= 1
+                    break
+                current = current.next
 
     def print(self):
         print(f"List Length: {self.size}")

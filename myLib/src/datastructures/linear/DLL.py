@@ -12,13 +12,11 @@ class DLL(SLL):
             self.tail.prev = None
 
     def insert_head(self, node):
-        assert isinstance(node, DNode), "Node must be an instance of DNode"
         super().insert_head(node)
         if self.size == 2:
             self.head.next.prev = self.head
 
     def insert_tail(self, node):
-        assert isinstance(node, DNode), "Node must be an instance of DNode"
         if self.tail is None:
             super().insert_tail(node)
         else:
@@ -29,7 +27,6 @@ class DLL(SLL):
             self.size += 1
 
     def insert(self, node, position):
-        assert isinstance(node, DNode), "Node must be an instance of DNode"
         if position == 0:
             self.insert_head(node)
         elif position == self.size:
@@ -46,7 +43,6 @@ class DLL(SLL):
             self.size += 1
 
     def sorted_insert(self, node):
-        assert isinstance(node, DNode), "Node must be an instance of DNode"
         super().sorted_insert(node)
 
     def delete_head(self):

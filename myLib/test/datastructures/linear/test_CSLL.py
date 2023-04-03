@@ -82,6 +82,21 @@ def test_sorted_insert():
     assert csll.size == 3
 
 
+def test_search():
+    csll = CSLL()
+    node1 = SNode(1)
+    node2 = SNode(2)
+    node3 = SNode(3)
+    csll.insert_tail(node1)
+    csll.insert_tail(node2)
+    csll.insert_tail(node3)
+    assert csll.search(node1) == node1
+    assert csll.search(node2) == node2
+    assert csll.search(node3) == node3
+    non_existent_node = SNode(4)
+    assert csll.search(non_existent_node) is None
+
+
 def test_delete_head():
     csll = CSLL()
     csll.insert_tail(SNode(1))
