@@ -1,5 +1,4 @@
 import pytest
-
 from myLib.src.datastructures.linear.SLL import SLL
 from myLib.src.datastructures.nodes.SNode import SNode
 
