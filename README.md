@@ -10,7 +10,6 @@
 ### How to run tests
 
 - Install pytest
-  ``
 
 ```bash
 pip install pytest
