@@ -2,7 +2,6 @@
 
 from myLib.src.datastructures.nodes.SNode import SNode
 
-
 class SLL():
     def __init__(self, node=None):
         self.head = node
