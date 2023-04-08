@@ -3,12 +3,12 @@
 from myLib.src.datastructures.nodes.TNode import TNode
 
 class BST():
-    def __init__(self, node = None):
+    def __init__(self, arg = None):
         self.root = None
-        if isinstance(node, TNode):
-            self.root = node
-        elif isinstance(node, int):
-            self.root = TNode(node)
+        if isinstance(arg, TNode):
+            self.root = arg
+        elif isinstance(arg, int):
+            self.root = TNode(arg)
             
     def insert(self, arg):
         current = self.root
@@ -34,6 +34,9 @@ class BST():
             parent.left = newnode
         else:
             parent.right = newnode
+        
+        return newnode
+
             
     def delete(self, val):
         node_to_delete = self.search(val)
