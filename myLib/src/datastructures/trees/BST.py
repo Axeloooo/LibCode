@@ -40,10 +40,9 @@ class BST():
             
     def delete(self, val):
         node_to_delete = self.search(val)
-        
         if node_to_delete is None:
             return "Value is not in the tree"
-        elif node_to_delete.left is None and node_to_delete.right is None:      ##if node_to_delete is a leaf
+        elif node_to_delete.left == None and node_to_delete.right == None:      ##if node_to_delete is a leaf
             if node_to_delete == self.root:
                 self.root = None
             else:
@@ -51,7 +50,13 @@ class BST():
                     node_to_delete.parent.right = None
                 else:
                     node_to_delete.parent.left = None
-        elif node_to_delete.left is None or node_to_delete.right is None:       ##if node_to_delete has one child
+        elif node_to_delete.left is not None and node_to_delete.right is not None:  
+            successor = node_to_delete.right
+            while successor.left is not None:
+                successor = successor.left
+            self.delete(successor.data)
+            node_to_delete.data = successor.data
+        else:                       
             if node_to_delete == self.root:
                 if node_to_delete.right is None:
                     self.root = node_to_delete.left
@@ -67,15 +72,7 @@ class BST():
                     if node_to_delete.left is None:
                         node_to_delete.parent.right = node_to_delete.right
                     else:
-                        node_to_delete.parent.right = node_to_delete.left
-        else:
-            successor = node_to_delete.right
-            while successor.left is not None:
-                successor = successor.left
-            self.delete(successor.data)
-            node_to_delete.data = successor.data
-                
-                    
+                        node_to_delete.parent.right = node_to_delete.left      
     
     def search(self, data):
         current = self.root
@@ -98,6 +95,9 @@ class BST():
         
         
     def printBF(self):
+        if self.root is None:
+            return
+        
         queue = []
         queue.append(self.root)
         current_level_count = 1

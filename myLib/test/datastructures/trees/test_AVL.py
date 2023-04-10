@@ -24,7 +24,7 @@ def test_constructor():
     
     assert avl.printBF() == print(string_output)
     
-def test_insert():
+def test_insert_with_integer():
     
     avl = AVL(30)
     avl.insert(40)
@@ -40,8 +40,75 @@ def test_insert():
     string_output = "70\n30 90\n6 40 80 95\n5 12 60"
     assert avl.printBF() == print(string_output)
     
-    
+def test_insert_with_node():
+    avl = AVL(TNode(30))
+    avl.insert(TNode(40))
+    avl.insert(TNode(60))
+    avl.insert(TNode(70))
+    avl.insert(TNode(80))
+    avl.insert(TNode(90))
+    avl.insert(TNode(95))
+    avl.insert(TNode(5))
+    avl.insert(TNode(6))
+    avl.insert(TNode(12))
 
+    string_output = "70\n30 90\n6 40 80 95\n5 12 60"
+    assert avl.printBF() == print(string_output)
 
+def test_search():
+    avl = AVL(30)
+    avl.insert(40)
+    avl.insert(60)
+    avl.insert(70)
+    avl.insert(80)
+    avl.insert(90)
+    avl.insert(95)
+    avl.insert(5)
+    avl.insert(6)
+    avl.insert(12)
     
+    assert isinstance(avl.search(40), TNode) == True
+    assert avl.search(40).data == 40
+    assert avl.search(7) == None
+
+def test_delete():
+
+    avl = AVL(2)
+    avl.insert(5)
+    avl.insert(7)
+    avl.insert(10)
+    avl.insert(12)
+    avl.insert(17)
+    avl.insert(20)
+
+    assert avl.delete(4) == "Value is not in the tree"
+
+    avl.delete(17)
+    assert avl.search(17) == None
     
+def test_printInOrder():
+    
+    avl = AVL(10)
+    avl.insert(5)
+    avl.insert(7)
+    avl.insert(2)
+    avl.insert(20)
+    avl.insert(12)
+    avl.insert(17)
+
+    string = "2\n5\n7\n10\n12\n17\n20"
+    
+    assert avl.printInOrder() == print(string)
+    
+def test_printBF():
+    avl = AVL(10)
+    avl.insert(5)
+    avl.insert(7)
+    avl.insert(2)
+    avl.insert(20)
+    avl.insert(12)
+    avl.insert(17)
+    
+    string = "7\n5 12\n2 10 20\n17"  
+    
+    assert avl.printBF() == print(string)

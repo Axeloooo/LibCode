@@ -14,8 +14,19 @@ class AVL(BST):
             
     def insert(self, val):
         inserted_node = super().insert(val)
-        print(inserted_node, inserted_node.parent)
         self.balance_tree(inserted_node)  
+        
+    def delete(self,val):
+        return super().delete(val)
+        
+    def search(self, val):
+        return super().search(val)
+        
+    def printInOrder(self):
+        super().printInOrder()
+        
+    def printBF(self):
+        super().printBF()
         
     def balance_tree(self, node):
         pivot_balance, pivot = self.find_pivot(node)
@@ -146,6 +157,6 @@ class AVL(BST):
             return
         self.create_tree(node.left)
         self.insert(node.data)
-        self.create_tree(node.right) 
+        self.create_tree(node.right)
     
     
