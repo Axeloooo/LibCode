@@ -5,7 +5,7 @@
 ### Link to the PyPi package
 
 ```bash
-https://pypi.org/project/LibCode/1.0.0/
+https://pypi.org/project/LibCode/1.1.0/
 ```
 
 ### Collaborators
