@@ -24,6 +24,34 @@ def test_constructor():
     
     assert avl.printBF() == print(string_output)
     
+def test_set_root():
+    avl = AVL()
+    avl.set_root(3)
+    assert avl.root.data == 3
+    
+    tnode = TNode(5)
+    tnode.set_right(7)
+    tnode.get_right().set_right(8)
+    
+    avl.set_root(tnode)
+    assert avl.root.data == 7
+    assert avl.root.get_right().data == 8
+    assert avl.root.get_left().data == 5
+    
+def test_get_root():
+    avl = AVL()
+    avl.set_root(3)
+    assert avl.get_root().data == 3
+    
+    tnode = TNode(5)
+    tnode.set_right(7)
+    tnode.get_right().set_right(8)
+    
+    avl.set_root(tnode)
+    assert avl.get_root().data == 7
+    assert avl.get_root().get_right().data == 8
+    assert avl.get_root().get_left().data == 5
+    
 def test_insert_with_integer():
     
     avl = AVL(30)

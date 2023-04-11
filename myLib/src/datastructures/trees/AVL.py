@@ -12,6 +12,17 @@ class AVL(BST):
         else:
             super().__init__(arg) 
             
+    def set_root(self, root):
+        if isinstance(root, TNode):
+            self.root = None
+            if root.right is not None or root.left is not None:
+                self.create_tree(root)
+        else:
+            super().__init__(root)
+            
+    def get_root(self):
+        return self.root
+            
     def insert(self, val):
         inserted_node = super().insert(val)
         self.balance_tree(inserted_node)  

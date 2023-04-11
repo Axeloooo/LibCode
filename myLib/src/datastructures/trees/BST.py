@@ -10,6 +10,15 @@ class BST():
         elif isinstance(arg, int):
             self.root = TNode(arg)
             
+    def set_root(self, root):
+        if isinstance(root, TNode):
+            self.root = root
+        elif isinstance(root, int):
+            self.root = TNode(root)
+        
+    def get_root(self):
+        return self.root
+            
     def insert(self, arg):
         current = self.root
         parent = None
@@ -37,6 +46,7 @@ class BST():
         
         return newnode
 
+    
             
     def delete(self, val):
         node_to_delete = self.search(val)

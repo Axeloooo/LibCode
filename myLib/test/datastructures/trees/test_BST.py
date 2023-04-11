@@ -13,6 +13,22 @@ def test_constructor():
     bst3 = BST()
     assert bst3.root is None
     
+def test_set_root():
+    bst = BST()
+    bst.set_root(TNode(10))
+    assert bst.root.data == 10
+    
+    bst.set_root(5)
+    assert bst.root.data == 5
+    
+def test_get_root():
+    bst = BST()
+    bst.set_root(TNode(10))
+    assert bst.get_root().data == 10
+    
+    bst.set_root(5)
+    assert bst.get_root().data == 5
+    
 def test_insert_with_integer():
     bst = BST()
     bst.insert(10)
