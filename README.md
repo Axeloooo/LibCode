@@ -419,6 +419,61 @@ This will create a queue with three nodes and print its contents.
 
 You can also use other methods to search, dequeue, and manipulate the queue as needed.
 
+## Circular Singly Linked List
+
+This CSLL (Circular Singly Linked List) class represents a circular singly linked list data structure that extends the SLL (Singly Linked List) class. A circular singly linked list is similar to a singly linked list, with the only difference being that the last element in the list points back to the first element, forming a loop.
+
+```python
+from myLib import CSLL
+from myLib import SNode
+```
+
+New and overridden methods specific to the CSLL class:
+
+1. insert_head(self, node): Inserts a new node at the head of the list and updates the tail's next pointer to the new head.
+2. insert_tail(self, node): Inserts a new node at the tail of the list and updates the tail's next pointer to the head.
+3. is_sorted(self): Checks if the list is sorted.
+4. sort(self): Sorts the list if it's not already sorted.
+5. sorted_insert(self, node): Inserts a new node into a sorted list while maintaining the order.
+6. search(self, node): Searches for a node in the list.
+7. delete_head(self): Deletes the head node from the list and updates the tail's next pointer.
+8. delete_tail(self): Deletes the tail node from the list and updates the tail's next pointer.
+9. delete(self, node): Deletes a node from the list.
+10. print(self): Prints the list's length, sorted status, content, and the head node to which the tail points back.
+
+To create a circular singly linked list and perform operations using the CSLL class, follow these steps:
+
+1. Create an instance of the CSLL class:
+
+```python
+csll = CSLL()
+```
+
+2. Create and insert nodes into the list using the insert_head or insert_tail methods:
+
+```python
+node1 = SNode(1)
+node2 = SNode(2)
+circular_list.insert_head(node1)
+circular_list.insert_tail(node2)
+```
+
+3. Perform other operations like searching, deleting, or sorting nodes:
+
+```python
+circular_list.sort()
+found_node = circular_list.search(node1)
+circular_list.delete(found_node)
+```
+
+4. Print the list:
+
+```python
+circular_list.print()
+```
+
+The CSLL class provides a basic implementation of a circular singly linked list with essential operations. You can extend the class or add more methods to fit your specific requirements.
+
 ## Circular Doubly Linked List
 
 The CDLL class is an implementation of a circular doubly-linked list that inherits from the DLL (Doubly Linked List) class. This class allows you to create and manipulate circular doubly-linked lists. The nodes in the list are connected in a circular fashion, with the tail node pointing to the head node and vice versa.
