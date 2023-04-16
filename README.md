@@ -15,7 +15,7 @@ https://pypi.org/project/LibCode/1.1.0/
 
 # Get Started
 
-### Introduction
+## Introduction
 
 This is a library that contains a set of data structures and algorithms that are used in the development of software. The library is written in Python and contains the following data structures:
 
@@ -28,13 +28,13 @@ This is a library that contains a set of data structures and algorithms that are
 - Binary Search Tree
 - AVL Tree
 
-### Installation
+## Installation
 
 ```bash
 pip install LibCode
 ```
 
-### Overview
+## Overview
 
 The library contains the following modules:
 
@@ -78,7 +78,7 @@ The myLib.test.data_structures.trees module contains the following classes:
 - test_BST
 - test_AVL
 
-### Testing
+## Testing
 
 To run the tests, first, install the pytest package:
 
@@ -94,7 +94,7 @@ python -m pytest -v
 
 # Documentation
 
-### Single Node
+## Single Node
 
 The SNode class is a simple implementation of a node for a Singly Linked List data structure. Each node in a Singly Linked List contains two attributes: the data it holds and a reference to the next node in the list.
 
@@ -137,7 +137,7 @@ Now you have two nodes in a Singly Linked List. You can continue adding more nod
 
 For more advanced operations on a Singly Linked List, such as inserting, deleting, or searching nodes, use the SLL class provided earlier in this conversation.
 
-### Double Node
+## Double Node
 
 The DNode class is an implementation of a node for a Doubly Linked List data structure. Each node in a Doubly Linked List contains three attributes: the data it holds, a reference to the next node in the list, and a reference to the previous node in the list.
 
@@ -182,7 +182,7 @@ Now you have two nodes in a Doubly Linked List. You can continue adding more nod
 
 For more advanced operations on a Doubly Linked List, such as inserting, deleting, or searching nodes, use the DLL class provided earlier in this conversation.
 
-### Tree Node
+## Tree Node
 
 This TNode class represents a general tree node that can be used for both Binary Search Trees (BST) and AVL trees.
 
@@ -233,7 +233,7 @@ Now you have two nodes in a tree structure. You can continue adding more nodes a
 
 For more advanced operations on BST or AVL trees, such as inserting, deleting, or searching nodes, you would need to create a tree class that utilizes the TNode class to perform those operations.
 
-### Singly Linked List
+## Singly Linked List
 
 The SLL class is an implementation of a singly linked list data structure. It provides methods for creating and manipulating singly linked lists. In a singly linked list, each node contains a reference to the next node, except for the last node, which has a reference to None.
 
@@ -282,7 +282,7 @@ This will create a singly linked list with three nodes and print its contents.
 
 You can also use other methods to search, delete, and manipulate the list as needed.
 
-### Doubly Linked List
+## Doubly Linked List
 
 The DLL (Doubly Linked List) class is an implementation of a doubly linked list data structure. It inherits from the SLL (Singly Linked List) class and extends the functionality to support doubly linked nodes, with each node having a reference to both the next node and the previous node.
 
@@ -331,7 +331,7 @@ This will create a doubly linked list with three nodes and print its contents.
 
 You can also use other methods to search, delete nodes, and manipulate the doubly linked list as needed.
 
-### Stack
+## Stack
 
 The StackLL class is an implementation of a stack data structure based on a singly linked list. It inherits from the SLL (Singly Linked List) class and disables some of the methods not needed for a stack, such as insert_tail, insert, is_sorted, sort, sorted_insert, delete_tail, and delete.
 
@@ -375,7 +375,7 @@ This will create a stack with three nodes and print its contents.
 
 You can also use other methods to search, pop, and manipulate the stack as needed.
 
-### Queue
+## Queue
 
 The QueueLL class is an implementation of a queue data structure based on a singly linked list. It inherits from the SLL (Singly Linked List) class and disables some of the methods not needed for a queue, such as insert_head, insert, is_sorted, sort, sorted_insert, delete_head, delete_tail, and delete.
 
@@ -419,7 +419,7 @@ This will create a queue with three nodes and print its contents.
 
 You can also use other methods to search, dequeue, and manipulate the queue as needed.
 
-### Circular Doubly Linked List
+## Circular Doubly Linked List
 
 The CDLL class is an implementation of a circular doubly-linked list that inherits from the DLL (Doubly Linked List) class. This class allows you to create and manipulate circular doubly-linked lists. The nodes in the list are connected in a circular fashion, with the tail node pointing to the head node and vice versa.
 
