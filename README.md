@@ -520,3 +520,111 @@ clist.print()
 This will create a circular doubly-linked list with three nodes and print its contents.
 
 You can also use other methods to search, delete, and manipulate the list as needed.
+
+## BST Tree
+
+This BST class represents a Binary Search Tree for integer data members. A Binary Search Tree (BST) is a data structure that organizes data in a hierarchical manner, where each node has at most two children, such that the value of the left child is less than the parent node, and the value of the right child is greater than the parent node.
+
+```python
+from myLib import BST
+from myLib import TNode
+```
+
+Here are the methods available in the BST class:
+
+1. **init**(self, arg=None): Initializes the BST with an optional arg which can be a TNode instance or an integer.
+2. set_root(self, root): Sets the root of the tree to the given root, which can be a TNode instance or an integer.
+3. get_root(self): Returns the root of the tree.
+4. insert(self, arg): Inserts a new value into the tree, where arg can be a TNode instance or an integer.
+5. delete(self, val): Deletes a value from the tree.
+6. search(self, data): Searches for a value in the tree and returns the node if found, otherwise returns None.
+7. printInOrder(self): Prints the tree in-order (left, root, right).
+8. printBF(self): Prints the tree in Breadth-First (level-order) manner.
+
+To create a BST and perform operations, you can follow these steps:
+
+1. Create an instance of the BST class:
+
+```python
+bst_tree = BST()
+```
+
+2. Insert values into the tree:
+
+```python
+bst_tree.insert(10)
+bst_tree.insert(5)
+bst_tree.insert(15)
+```
+
+3. Perform other operations like searching or deleting values:
+
+```python
+bst_tree.search(5)
+bst_tree.delete(5)
+```
+
+4. Print the tree in-order:
+
+```python
+bst_tree.printInOrder()
+```
+
+## AVL Tree
+
+The AVL class represents a self-balancing AVL tree for integer data members. The class extends the BST (Binary Search Tree) class and overrides the necessary methods for AVL tree behavior. An AVL tree is a binary search tree that automatically balances itself when inserting or deleting nodes to maintain a logarithmic height and achieve optimal searching, insertion, and deletion time complexity.
+
+```python
+from myLib import AVL
+from myLib import TNode
+```
+
+Here are the new and overridden methods specific to the AVL class:
+
+1. **init**(self, arg=None): Initializes the AVL tree.
+2. set_root(self, root): Sets the root of the tree.
+3. get_root(self): Gets the root of the tree.
+4. insert(self, val): Inserts a new value into the tree and balances it.
+5. delete(self, val): Deletes a value from the tree.
+6. search(self, val): Searches for a value in the tree.
+7. printInOrder(self): Prints the tree in-order.
+8. printBF(self): Prints the balance factors of the nodes in the tree.
+9. balance_tree(self, node): Balances the tree after insertion.
+10. find_pivot(self, node): Finds the pivot node and its balance factor.
+11. right_height(self, node): Calculates the height of the right subtree.
+12. left_height(self, node): Calculates the height of the left subtree.
+13. set_balance(self, node): Sets the balance factor of a node.
+14. rotate_left(self, pivot, rotator): Rotates the subtree to the left around a pivot node.
+15. rotate_right(self, pivot, rotator): Rotates the subtree to the right around a pivot node.
+16. create_tree(self, node): Creates a new AVL tree from a given node.
+
+To create an AVL tree and perform operations, you can follow these steps:
+
+1. Create an instance of the AVL class:
+
+```python
+avl_tree = AVL()
+```
+
+2. Insert values into the tree:
+
+```python
+avl_tree.insert(10)
+avl_tree.insert(5)
+avl_tree.insert(15)
+```
+
+3. Perform other operations like searching or deleting values:
+
+```python
+avl_tree.search(5)
+avl_tree.delete(5)
+```
+
+4. Print the tree in-order:
+
+```python
+avl_tree.printInOrder()
+```
+
+The AVL class provides a basic implementation of a self-balancing AVL tree for integer data members. You can extend the class or add more methods to fit your specific requirements.
