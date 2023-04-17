@@ -5,7 +5,7 @@
 ### PyPi Package URL
 
 ```bash
-https://pypi.org/project/LibCode/1.1.0/
+https://pypi.org/project/LibCode/1.3.0/
 ```
 
 ### Collaborators
@@ -31,7 +31,7 @@ This is a library that contains a set of data structures and algorithms that are
 ## Installation
 
 ```bash
-pip install LibCode
+pip install LibCode==1.3.0
 ```
 
 ## Overview

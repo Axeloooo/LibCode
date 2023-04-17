@@ -6,7 +6,7 @@ with open("README.md", "r") as f:
 
 setup(
     name="LibCode",
-    version="1.1.0",
+    version="1.3.0",
     description="A data structures and algorithms library implemented with Python and tested with Pytest!",
     author="Axel Sanchez and  Mariia Podgaietska",
     packages=[
